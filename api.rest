@@ -1,0 +1,11 @@
+###
+POST  http://localhost:4000/
+Content-Type: application/json
+
+{
+    "phonenumber":0733556279,
+    "amount":500,
+    "landlord":"omar maulid",
+    "SIMtype":"Safaricom",
+    "location":"mombasa"
+}

@@ -4,6 +4,7 @@ const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
+const House = require('./models/house');
 
 // connecting mongodb database 
 mongoose.connect(process.env.DBuri)
@@ -26,7 +27,27 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
 
 
-// Home router
-app.get('/',(req,res)=>{
-    res.render('index');
+
+
+
+//  ROUTES
+// CREATE /POST REQUEST
+app.post('/',(req,res)=>{
+    const house=new House(req.body);
+    house.save()
+    .then((result)=>{
+        res.send(result)
+    })
+    .catch(err=>console.log(err))
 })
+// READ /GET REQUEST
+app.get('/',(req,res)=>{
+    House.find()
+    .then((result)=>{
+        res.render('index',{houses:result})
+
+    })
+    .catch(err=>console.log(err))
+})
+// UPDATE /PATCH REQUESTS
+// DELETE REQUESTS

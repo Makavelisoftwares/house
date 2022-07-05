@@ -13,10 +13,6 @@ const houseSchema=new Schema({
         type:String,
         required:true
     },
-    date:{
-        type:Date,
-        default:Date.now()
-    },
     SIMtype:{
         type:String,
         required:true
@@ -28,7 +24,7 @@ const houseSchema=new Schema({
 });
 
 
-const House=mongoose.model('object',houseSchema);
+const House=mongoose.model('house',houseSchema);
 module.exports=House;
 
 
