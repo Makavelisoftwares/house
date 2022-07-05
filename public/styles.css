@@ -36,6 +36,11 @@ header{
     object-fit: contain;
 }
 
+.sidebar h3{
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #000000;
+}
 .container{
     display: flex;
 }
@@ -47,13 +52,17 @@ header{
 
 .sidebar ul li{
     list-style: none;
-    padding: 20px 0;
+    padding: 40px 0;
+    border-bottom: 1px solid #e1e3e0;
+    width: 100%;
+
 
 }
 .sidebar li a{
     text-decoration: none;
     color: #376e00 ;
     padding: 20px 0;
+
 }
 .links{
     display: flex;
