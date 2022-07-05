@@ -45,7 +45,6 @@ app.get('/',(req,res)=>{
     House.find()
     .then((result)=>{
         res.render('index',{houses:result})
-
     })
     .catch(err=>console.log(err))
 })
